@@ -21,11 +21,17 @@ function App() {
     .then(data=> setListings(data))
   }, [])
 
+  function handleNewListing(newListing){
+    console.log(newListing)
+
+    setListings([...listings, newListing])
+  }
+
   
 
   return (
     <div className="app">
-      <Header search={search} setSearch={setSearch} />
+      <Header handleNewListing={handleNewListing} search={search} setSearch={setSearch} />
       <ListingsContainer listings={filteredListings} deleteListing={deleteListing} />
     </div>
   );

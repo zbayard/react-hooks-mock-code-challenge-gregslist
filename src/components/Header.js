@@ -1,7 +1,8 @@
 import React from "react";
 import Search from "./Search";
+import NewForm from "./NewForm"
 
-function Header({search, setSearch}) {
+function Header({search, setSearch, handleNewListing}) {
   return (
     <header>
       <h1>
@@ -11,6 +12,7 @@ function Header({search, setSearch}) {
         gregslist
       </h1>
       <Search search={search} setSearch={setSearch} />
+      <NewForm handleNewListing={handleNewListing} />
     </header>
   );
 }
